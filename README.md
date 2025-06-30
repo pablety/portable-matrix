@@ -18,7 +18,11 @@ Solo reemplaza (anda como esta) matrixpass por la contraseña que quieras usar p
 
 chmod +x setup-matrix-usb.sh
 ./setup-matrix-usb.sh
+sudo sh -c "echo \"$(hostname -I | awk '{print \$1}') miserver.local\" >> /etc/hosts"
 
+De esta forma se ingresa desde el navegador 
+http://miserver.local:8080
+y el server base se configura http://miserver.local:8008
 
 
 
@@ -27,7 +31,9 @@ chmod +x setup-matrix-usb.sh
 # Al conectar el usb
 ### apply-usb-matrix.sh
 
-He creado un script apply-usb-matrix.sh que, al ejecutarlo tras montar el USB en /media/usb,:
+Al ejecutar apply-usb-matrix.sh tras montar el USB en /media/usb,:
+
+Que hace: 
 
 Verifica que el USB esté montado.
 
