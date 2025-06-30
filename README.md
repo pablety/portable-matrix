@@ -1,5 +1,6 @@
 # portable-matrix
 ### Crear Portable setup-matrix-usb.sh
+Que hace:
 Formatea tu USB (/dev/sda) como ext4.
 
 Lo monta en /media/usb.
@@ -15,6 +16,12 @@ Arranca todo el stack.
 Inicializa la BD y registra un usuario admin con la misma contraseña
 
 Solo reemplaza (anda como esta) matrixpass por la contraseña que quieras usar para Postgres, Synapse y tu usuario admin.
+'''Advertencia: 
+en el paso 4) Instalar Docker & Compose V2
+curl -fsSL https://get.docker.com | sh
+puede generar problemas si ya existe Compose'''
+
+Ejecutar: 
 
 chmod +x setup-matrix-usb.sh
 ./setup-matrix-usb.sh
@@ -23,9 +30,6 @@ sudo sh -c "echo \"$(hostname -I | awk '{print \$1}') miserver.local\" >> /etc/h
 De esta forma se ingresa desde el navegador 
 http://miserver.local:8080
 y el server base se configura http://miserver.local:8008
-
-
-
 
 
 # Al conectar el usb
